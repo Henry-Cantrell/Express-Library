@@ -9,6 +9,15 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+// Mongoose connection 
+
+//Set up mongoose connection
+var mongoose = require('mongoose');
+var mongoDB = "mongodb+srv://Henry:FaL6jJrxQsSSi2V@cluster0.rkdr7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
 // database initialization and connection start
 
 const { MongoClient } = require('mongodb');
