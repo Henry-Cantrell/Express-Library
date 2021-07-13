@@ -6,7 +6,7 @@ block content
   ul
     each genre in genre_list
       li
-        a(href= 'genre' + '/' + (genre.url.slice(5))) #{genre.name}
+        a(href='genre' + '/' + genre.url.slice(6)) #{genre.name}
 
     else
       li There are no genres.
